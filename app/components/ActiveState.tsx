@@ -36,11 +36,13 @@ const ActiveState: React.FC<ActiveStateProps> = ({
         <form onSubmit={handleSubmit}>
           <div className="gap-6 flex justify-between mb-7">
             {selections.map((item, index) => (
-              <div className="flex justify-center bg-slate-700 rounded-full w-[45px] h-[45px] text-gray-300 cursor-pointer hover:bg-[#FB7718]  active:bg-[#FB7718]/80 ">
+              <div
+                key={index}
+                className="flex justify-center bg-slate-700 rounded-full w-[45px] h-[45px] text-gray-300 cursor-pointer hover:bg-[#FB7718]  active:bg-[#FB7718]/80 "
+              >
                 <input
                   type="button"
                   onClick={() => setRating(item)}
-                  key={index}
                   className="cursor-pointer visited:text-white focus:outline-none focus:text-white"
                   value={item}
                 />
